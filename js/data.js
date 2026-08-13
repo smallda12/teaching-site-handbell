@@ -398,6 +398,7 @@ window.UNIT = {
 
 const 資源v = () => `?v=${(window.CONFIG && CONFIG.資源版本) || 1}`;
 window.頁圖 = (n) => `assets/pages/p${String(n).padStart(2,"0")}.webp${資源v()}`;
+window.卡圖 = (id, 面 = "front") => `assets/cards/card${String(id).padStart(2,"0")}_${面}.webp${資源v()}`;
 window.取選項順序 = (q) => ({ 顯示選項: [q.選項[0], q.選項[1]], 顯示正解: q.正解 });
 window.全部評量 = UNIT.重點.flatMap(r =>
   r.評量.map((q,i) => ({ ...q, 重點: r.編號, 重點標題: r.標題, 序: i+1 })));
